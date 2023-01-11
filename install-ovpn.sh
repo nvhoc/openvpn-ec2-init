@@ -179,7 +179,7 @@ LimitNPROC=infinity" > /etc/systemd/system/openvpn-server@server.service.d/disab
   echo "deb https://packages.doppler.com/public/cli/deb/debian any-version main" |  tee /etc/apt/sources.list.d/doppler-cli.list
   apt-get update &&  apt-get -y install doppler
   curl -O https://raw.githubusercontent.com/nvhoc/openvpn-ec2-init/main/add-key.sh
-  DOPPLER_TOKEN=$DOPPLER_TOKEN doppler run -- ./add_key.sh
+  doppler run -- bash add-key.sh
 	# Generate server.conf
 	echo "local $ip
 port $port
